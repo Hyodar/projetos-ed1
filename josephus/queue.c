@@ -16,14 +16,14 @@ void destroyQueue(Queue* queue) {
     free(queue);
 }
 
-void enqueue(Queue* queue, int elem) {
+void enqueue(Queue* queue, int el) {
 
     if(isQueueFull(queue)) {
         printf("Full queue \n");
         exit(1);
     }
 
-    queue->array[queue->end] = elem;
+    queue->array[queue->end] = el;
     queue->end = (queue->end + 1) % queue->size;
 }
 

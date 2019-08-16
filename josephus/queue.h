@@ -13,7 +13,7 @@ typedef struct queue {
 Queue* createQueue(int tam);
 void destroyQueue(Queue* queue);
 
-void enqueue(Queue* queue, int elem);
+void enqueue(Queue* queue, int el);
 int dequeue(Queue* queue);
 
 int isQueueFull(Queue* queue);
