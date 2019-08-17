@@ -1,7 +1,13 @@
 
+#include <string.h>
 #include "queue.h"
 
 int main(int argc, char** argv) {
+
+    if(argc == 1 || !strcmp(argv[1], "-help")) {
+        printf("Usage: ./josephus [interval] [rebel_count]\n");
+        exit(0);
+    }
 
     int m = atoi(argv[1]);
     int n = atoi(argv[2]);
@@ -20,5 +26,8 @@ int main(int argc, char** argv) {
         printf("%d ", dequeue(queue));
     }
 
+    destroyQueue(queue);
+
     putchar('\n');
+    return 0;
 }
