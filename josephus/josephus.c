@@ -1,5 +1,4 @@
 
-#include <string.h>
 #include "queue.h"
 
 int main(int argc, char** argv) {
@@ -19,7 +18,7 @@ int main(int argc, char** argv) {
     }
 
     while(!isQueueEmpty(queue)) {
-        for(int i=0; i<m-1; i++) {
+        for(int i = 0; i < m-1; i++) {
             int el = dequeue(queue);
             enqueue(queue, el);
         }
