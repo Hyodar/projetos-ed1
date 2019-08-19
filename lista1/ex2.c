@@ -2,9 +2,9 @@
 #include <time.h>
 #include "queue.h"
 
-#define QUEUE_SIZE 100
+#define QUEUE_SIZE 50
 
-int main() {
+int main(int argc, char** argv) {
 
     srand(time(NULL));
 
@@ -16,7 +16,10 @@ int main() {
         enqueue((n & 1)? impares : pares, n);
     }
 
+    printf("Pares: ");
     printQueue(pares);
+
+    printf("Impares: ");
     printQueue(impares);
 
     destroyQueue(pares);

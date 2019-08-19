@@ -1,5 +1,9 @@
 
+// Included modules:
+
 #include "queue.h"
+
+// Function declarations:
 
 Queue* createQueue(int size) {
     Queue* queue = (Queue*) malloc(sizeof(Queue));
@@ -11,10 +15,14 @@ Queue* createQueue(int size) {
     return queue;
 }
 
+// ---------------------------------------------------------------------------
+
 void destroyQueue(Queue* queue) {
     free(queue->array);
     free(queue);
 }
+
+// ---------------------------------------------------------------------------
 
 void enqueue(Queue* queue, int el) {
 
@@ -26,6 +34,8 @@ void enqueue(Queue* queue, int el) {
     queue->array[queue->end] = el;
     queue->end = (queue->end + 1) % queue->size;
 }
+
+// ---------------------------------------------------------------------------
 
 int dequeue(Queue* queue) {
 
@@ -40,14 +50,11 @@ int dequeue(Queue* queue) {
     return elem;
 }
 
+// ---------------------------------------------------------------------------
+
 void printQueue(Queue* queue) {
     
     int pos = queue->start;
-
-    if(isQueueFull(queue)) {
-        printf("%d ", queue->array[pos]);
-        pos = (pos + 1) % queue->size;
-    }
 
     while(pos != queue->end) {
         printf("%d ", queue->array[pos]);
@@ -57,18 +64,26 @@ void printQueue(Queue* queue) {
     putchar('\n');
 }
 
+// ---------------------------------------------------------------------------
+
 int getQueueFirstEl(Queue* queue) {
-    // if(!isEmptyQueue(queue)) ?
+    // assume que existe um elemento pra economizar testes
     return queue->array[queue->start];
 }
+
+// ---------------------------------------------------------------------------
 
 int getQueueSize(Queue* queue) {
     return queue->size - 1;
 }
 
+// ---------------------------------------------------------------------------
+
 int isQueueFull(Queue* queue) {
     return (queue->start == ((queue->end + 1) % queue->size));
 }
+
+// ---------------------------------------------------------------------------
 
 int isQueueEmpty(Queue* queue) {
     return (queue->start == queue->end);

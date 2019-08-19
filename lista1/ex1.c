@@ -1,7 +1,7 @@
 
 #include "queue.h"
 
-int main() {
+int main(int argc, char** argv) {
 
     int tam = 6;
     Queue* queue = createQueue(tam + 1);
