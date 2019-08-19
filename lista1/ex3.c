@@ -6,7 +6,6 @@ Queue* concatena(Queue* q1, Queue* q2) {
     Queue* merged = createQueue(getQueueSize(q1) + getQueueSize(q2) + 1);
 
     for(int i = 0; i < getQueueSize(merged); i++) {
-        
         if(getQueueFirstEl(q1) <= getQueueFirstEl(q2) && !isQueueEmpty(q1)) {
             enqueue(merged, dequeue(q1));
         } else if(!isQueueEmpty(q2)) {
@@ -14,7 +13,6 @@ Queue* concatena(Queue* q1, Queue* q2) {
         } else {
             enqueue(merged, dequeue(q1));
         }
-
     }
 
     return merged;
