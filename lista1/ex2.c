@@ -11,7 +11,7 @@ int main(int argc, char** argv) {
     Queue* pares = createQueue(QUEUE_SIZE + 1);
     Queue* impares = createQueue(QUEUE_SIZE + 1);
 
-    for(int i = 0; i<QUEUE_SIZE; i++) {
+    for(int i = 0; i < QUEUE_SIZE; i++) {
         int n = rand() % 101;
         enqueue((n & 1)? impares : pares, n);
     }

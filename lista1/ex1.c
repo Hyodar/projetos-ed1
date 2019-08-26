@@ -1,10 +1,11 @@
 
 #include "queue.h"
 
+#define TAM 6
+
 int main(int argc, char** argv) {
 
-    int tam = 6;
-    Queue* queue = createQueue(tam + 1);
+    Queue* queue = createQueue(TAM + 1);
 
     enqueue(queue, 2);
     enqueue(queue, 3);
