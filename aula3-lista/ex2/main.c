@@ -15,7 +15,6 @@ int bemFormada(const char* str) {
 		}
 	}
 
-
 	if(!isStackEmpty(s)) return 0;
 	destroyStack(s);
 
@@ -24,5 +23,11 @@ int bemFormada(const char* str) {
 
 int main(int argc, char** argv) {
 
-	printf("%d\n", bemFormada("( ( ) [ ( ) ] )"));
+    char seq[4][30] = {"( ( ) [ () ] )", "( [ ) ]", "(  ) [  ]", "( [  ]"};
+
+    for(int i = 0; i < 4; i++) {
+        printf("%s\n", (bemFormada(seq[i])? "Bem formada!" : "Mal formada!"));
+    }
+
+    return 0;
 }
