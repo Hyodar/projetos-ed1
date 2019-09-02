@@ -2,7 +2,7 @@
 #include "../node.h"
 #include "time.h"
 
-int procura(List* l, int el) {
+List* procura(List* l, int el) {
 	while(l != NULL) {
 		if(l->el == el) return l;
 		l = l->next;
@@ -16,8 +16,8 @@ List* separa(List* l1, int el) {
 	Node* pos = procura(l1, el);
 
 	if(pos != NULL) {
-		l2 = l1->next;
-		l1->next = NULL;
+		l2 = pos->next;
+		pos->next = NULL;
 	}
 
 	return l2;
@@ -37,7 +37,7 @@ int main() {
 	 printf("------\n");
 	 printList(l);
 
-	 List* l2 = separa(l, 7);
+	 List* l2 = separa(l, 3);
 
 	 printf("------\n");
 	 printList(l);
