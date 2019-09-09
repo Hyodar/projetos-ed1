@@ -31,10 +31,13 @@ Queue* enqueue(Queue* q, int el) {
 	return q;
 }
 
-Queue* dequeue(Queue* q) {	
-	Node* aux = q->list;
-	q->list = q->list->next;
-	free(aux);
+Queue* dequeue(Queue* q) {
+
+	if(!empty(q)) {
+		Node* aux = q->list;
+		q->list = q->list->next;
+		free(aux);
+	}
 
 	return q;
 }
