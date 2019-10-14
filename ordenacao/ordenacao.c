@@ -19,7 +19,7 @@ void Ordena1 (int *vetor, int tamanho) {
 void Ordena2 (int *vetor, int tamanho) {
 	for(int i = 0; i < tamanho; i++) {
 		int n = i;
-		for(int j = i; j < tamanho; j++) {
+		for(int j = i+1; j < tamanho; j++) {
 			if(vetor[j] < vetor[n]) {
 				n = j;
 			}
@@ -30,19 +30,16 @@ void Ordena2 (int *vetor, int tamanho) {
 	}
 }
 
-void Ordena3 (int *vetor, int tamanho) {
-	for(int i = 1; i < tamanho - 1; i++) {
-		int keyi = i+1;
-		int key = vetor[keyi];
-		for(int j = i; j >= 0; j--) {
-			if(vetor[j] > key) {
-				vetor[keyi] = vetor[j];
-				keyi--;
-			}
+void Ordena3(int* v, int tamanho) {
+	int j;
+	int i;
+	for(i = 1; i < tamanho; i++) {
+		int key = v[i];
+		for(j = i-1; (j>=0) && (v[j] > key) ; j--) {
+			v[j+1] = v[j];
 		}
-		vetor[keyi] = key;
+		v[j+1] = key;
 	}
-		
 }
 
 void Imprimir (int *A, int tamanho) {
@@ -86,9 +83,9 @@ int main () {
   }  
 
   start = clock();
-  Imprimir(v1, tamanho);
+  //Imprimir(v1, tamanho);
   Ordena1 (v1, tamanho);
-  Imprimir(v1, tamanho);
+  //Imprimir(v1, tamanho);
   end = clock();
   elapsed_time = (end - start)/(double)CLOCKS_PER_SEC;
   printf("Tempo de execução (ordenação 1): %.2f\n", elapsed_time);
@@ -97,9 +94,9 @@ int main () {
   }
 
   start = clock();
-  Imprimir(v2, tamanho);
+  //Imprimir(v2, tamanho);
   Ordena2 (v2, tamanho);
-  Imprimir(v2, tamanho);
+  //Imprimir(v2, tamanho);
   end = clock();
   elapsed_time = (end - start)/(double)CLOCKS_PER_SEC;
   printf("Tempo de execução (ordenação 2): %.2f\n", elapsed_time);
@@ -108,9 +105,9 @@ int main () {
   }
 
   start = clock();
-  Imprimir(v3, tamanho);
+  //Imprimir(v3, tamanho);
   Ordena3 (v3, tamanho);
-  Imprimir(v3, tamanho);
+  //Imprimir(v3, tamanho);
   end = clock();
   elapsed_time = (end - start)/(double)CLOCKS_PER_SEC;
   printf("Tempo de execução (ordenação 3): %.2f\n", elapsed_time);
