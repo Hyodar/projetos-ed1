@@ -81,15 +81,20 @@ int main (int argc, char *argv[]) {
 	printf("%d: \n", tamanho);
 	printf("crescente: \n");
 	crescente(v, tamanho);
+	//Imprimir(v, tamanho);
 	start = clock();
 	QuickSort(v, 0, tamanho-1);
 	end = clock();
 	elapsed_time = (end-start)/(double)CLOCKS_PER_SEC;
 	printf("%.2f - ver: %d\n", elapsed_time, Verifica_Ordenacao(v, tamanho));
 	printf("decrescente:\n");
-	decrescente(v, tamanho);                                start = clock();
+	decrescente(v, tamanho);
+	//Imprimir(v, tamanho);
+	start = clock();
         QuickSort(v, 0, tamanho-1);                             end = clock();                                          elapsed_time = (end-start)/(double)CLOCKS_PER_SEC;                                                              printf("%.2f - ver: %d\n", elapsed_time, Verifica_Ordenacao(v, tamanho));
-	printf("aleatorio:\n");                                 aleatorio(v, tamanho);                                	start = clock();                                        QuickSort(v, 0, tamanho-1);
+	printf("aleatorio:\n");                                 aleatorio(v, tamanho);
+	//Imprimir(v, tamanho);
+	start = clock();                                        QuickSort(v, 0, tamanho-1);
         end = clock();                                          elapsed_time = (end-start)/(double)CLOCKS_PER_SEC;                                                              printf("%.2f - ver: %d\n", elapsed_time, Verifica_Ordenacao(v, tamanho));
 	free(v);
    }
