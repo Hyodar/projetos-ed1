@@ -74,6 +74,15 @@ int main (int argc, char *argv[]) {
    double elapsed_time;
    srand(time(NULL));
 
+   // Melhor: aleatorio
+   // Pior: crescente
+   //
+   //	10000: 0.67 cresc, 0.42 dec, 0.00 aleatorio
+   //	se for crescente, alem de fazer todas as com
+   //	paracoes, faz todas as trocas possiveis. no caso decre
+   //	scente, mesmo tambem sendo o pior pivo, faz
+   //	menos trocas.
+
    int tamanho = 1;
    for(int i = 1; i <= 6; i++) {
 	tamanho *= 10;
