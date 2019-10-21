@@ -1,0 +1,4 @@
+
+Comparacoes: sum[i to n] (n-i) = sum[i to n](n) - sum[i to n](i) = n^2 - n(n+1)/2 = (n^2 - n)/2 /approx n^2
+
+Trocas: n
