@@ -1,0 +1,7 @@
+
+Como já previsto durante a aula, o algoritmo daria o mesmo resultado considerando
+que a lista é composta somente pelo número inteiro (key de ordenação), 
+pois a ordem de números de valor igual não importaria. Porém, considerando
+cada elemento como um bloco, com essa modificação no algoritmo, elementos 
+com a key de ordenação igual acabariam em posições invertidas em relação ao
+vetor inicial. Assim, ele não seria mais estável.

@@ -1,0 +1,14 @@
+
+n
+n-1 1
+n-2 1
+
+n * n
+linhas soma das linhas
+
+melhor caso
+  n
+n/2 n/2
+
+log2 n * n
+linhas soma das linhas
